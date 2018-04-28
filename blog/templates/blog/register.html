@@ -1,0 +1,28 @@
+{% extends 'blog/navigater.html' %}
+
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/register.css' %}">
+{% endblock %}
+
+
+{% block body %}
+
+{% block unset_search %}
+{% endblock %}
+
+<form class="form-register" method="POST">
+    {% csrf_token %}
+    <h1 class="h3 mb-3 font-weight-normal">Just register it!</h1>
+    <label class="sr-only">User Name</label>
+    <input type="text" id="inputText" class="form-control" placeholder="Tony" name="username" required autofocus>
+    <label class="sr-only" for="email">Email Adderss</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="demo@crx.me" name="email" required/>
+
+
+</form>
+
+{% endblock %}
+
+

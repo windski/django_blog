@@ -1,0 +1,18 @@
+{% extends 'blog/navigater.html' %}
+
+{% block body %}
+
+
+    {% if latest_article_list %}
+        <ul class="navbar-nav mr-auto">
+        {% for article in latest_article_list %}
+            <!-- <li><a href="/blog/{{ article.id }}/detail">{{ article.title }}</a></li> -->
+            <li class="nav-item"><a href="{% url 'blog:detail' article.id %}">{{ article.title }}</a></li>
+        {% endfor %}
+        </ul>
+
+    {% else %}
+        <p>No Article are available.</p>
+    {% endif %}
+
+{% endblock %}
