@@ -4,23 +4,24 @@ body {
 }
 
 body {
-	display: -ms-flexbox;
-	display: -webkit-box;
-	display: flex;
-	-ms-flex-align: center;
-	-ms-flex-pack: center;
-	-webkit-box-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	justify-content: center;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	background-color: #f5f5f5;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
 }
+
 
 .form-register {
     width: 100%;
-    max-width:330px;
+    max-width: 330px;
     padding: 15px;
     margin: 0 auto;
 }
@@ -33,6 +34,25 @@ body {
 	font-size: 16px;
 }
 
+.text-control {
+    margin-top: 15px;
+}
+
 .form-register .form-control:focus {
 	z-index: 2;
+}
+
+.form-register input[type="email"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-register input[type="password"] {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.reg_button {
+    margin: 40px 0px 0px 0px;
 }

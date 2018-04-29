@@ -14,14 +14,41 @@
 
 <form class="form-register" method="POST">
     {% csrf_token %}
+
     <h1 class="h3 mb-3 font-weight-normal">Just register it!</h1>
-    <label class="sr-only">User Name</label>
-    <input type="text" id="inputText" class="form-control" placeholder="Tony" name="username" required autofocus>
-    <label class="sr-only" for="email">Email Adderss</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="demo@crx.me" name="email" required/>
+    <label class="text-control">User Name</label>
 
+    {% if userexist %}
+    <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert">
+            &times;
+        </a>
+        <strong>Error!</strong>User name has already exist.
+    </div>
+    {% endif %}
 
+    <input type="text" id="inputText" class="form-control" placeholder="User name(Tony)" name="username" required autofocus>
+    <label class="text-control">Email Adderss</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email(demo@crx.me)" name="email" required>
+    <label class="text-control">Password</label>
+    <input type="password" id="inputPassword" class="form-control" name="password1" placeholder="Password" required>
+    <label class="text-control">Repeat Password</label>
+
+    {% if notequal %}
+    <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert">
+            &times;
+        </a>
+        <strong>Error!</strong>Two password are not equal.
+    </div>
+    {% endif %}
+
+    <input type="password" id="inputPassword" class="form-control" name="password2" placeholder="Repeat" required>
+
+    <button class="btn btn-lg btn-primary btn-block reg_button" type="submit">Register</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
 </form>
+
 
 {% endblock %}
 
